@@ -1,6 +1,6 @@
 @use "sass:math";
 
-@function heightInVH($h: 1, $sh: 776){
+@function heightInVH($h: 1, $sh: 667){
     $h: math.div($h, $sh);
     @return $h*100vh;
 }

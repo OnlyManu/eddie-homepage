@@ -3,46 +3,406 @@
 @import "./libs/mixins.scss";
 
 /*fonts*/
-$font-primary:'Montserrat', sans-serif;
+$font-primary:'Poppins', sans-serif;;
+$font-secondary:'Heebo', sans-serif;
+$font-footer:'Montserrat', sans-serif;
 /*colors*/
-$color-primary:#4E5150;
-$color-secondary:#A9A9A9;
+$color-heading: #333333;
+$color-primary:#4F4F4F;
+$color-small:#828282;
+$color-blue:#2D9CDB;
+$color-red:#EB5757;
+$color-green: #27AE60;
 $color-box: #E5E5E5;
-$color-footer: #B9BDCF;
+$color-licence: #B9BDCF;
 /*padding*/
-$padding-mobile: widthInVW(12);
-$padding-desktop: widthInVW(238, 1440);
+$padding-mobile: widthInVW(40);
+$padding-desktop: widthInVW(165, 1440);
 
+.heading{
+    color: $color-heading;
+}
+.heading-lg{
+    @include setFontProps(24, 36, 500);
+}
+.heading-md{
+    @include setFontProps(24, 36, 500);
+}
+.heading-sm{
+    @include setFontProps(24, 36, 500);
+}
+.icon-1{
+    background-color: $color-blue;
+}
+.icon-2{
+    background-color: $color-green;
+}
+.icon-3{
+    background-color: $color-red;
+}
+.form-email{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    label{
+        @include setFontProps(10, 15, 500);
+        color: $color-small;
+    }
+    .input-group{
+        @include setFontProps(14, 21, 500);
+        display: flex;
+        position: relative;
+        height: 47px;
+        input{
+            padding-left: 19px;
+            padding-right: 78px;
+            background-color: #F2F2F2;
+            border-radius: 12px;
+            width: 100%;
+            border: none;
+            &:hover{
+                outline: none;
+            }
+        }
+        button{
+            background-color: $color-blue;
+            color: #F2F2F2;
+            position: absolute;
+            height: 39px;
+            width: 71px;
+            top: 50%;
+            right: 4px;
+            border: none;
+            border-radius: 12px;
+            transform: translateY(-50%);
+        }
+    }           
+}
 html{
     font-family: $font-primary;
     color: $color-primary;
     background-color: #FFFFFF;
+    font-size: 14px;
 }
 .container{
     width: 100%;
+}
+header{
     padding: {
-        left: $padding-mobile;
-        right: $padding-mobile;
+        top: 15px;
+        left:10px;
+        right: 10px;
     };
+    margin-bottom: 102px;
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: heightInVH(48);
+        .logo{
+            font-family: $font-secondary;
+            @include setFontProps(24,35,800);
+            color: $color-heading;
+        }
+        nav{
+            display: none;
+        }
+    }
+    .banner{
+        .banner-text{
+            margin-left: widthInVW(30);
+            margin-bottom: 15px;
+            width: widthInVW(272);
+            .pre-heading{
+                @include setFontProps(12, 18, 500);
+                color: $color-blue;
+            }
+        }
+        .banner-img{
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+            margin-bottom: 22px;
+        }
+    }
+    .contact{
+        margin-left: widthInVW(30);
+        margin-right: widthInVW(30);
+        .contact-text{
+            margin-bottom: 31px;
+            display: flex;
+            flex-direction: column;
+            gap: 33px;
+        }
+        .heading{
+            width: widthInVW(220);
+        }
+        .content{
+            width: widthInVW(275);
+            @include setFontProps(12, 18, 400);
+        }
+    }
 }
 
 main{
-    
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
 }
-
-footer{
-    @include setFontProps(14, 17, 500);
-    color: $color-footer;
-    text-align: center;
-    margin-bottom: 24px;
-    .author{
-        text-decoration: none;
-        color: $color-footer;
-        font-weight: 700;
+.service{
+    display: flex;
+    flex-direction: column;
+    gap: 43px;
+    margin-bottom: 97px;
+    .heading{
+        margin-left: 50px;
+        width: widthInVW(259);
+    }
+    .cards-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 69px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .card{
+        padding-top: 49px;
+        padding-bottom: 49px;
+        padding-left: 34px;
+        padding-right: 34px;
         &:hover{
-            text-decoration: underline;
+            box-shadow: 0px 10px 30px rgba(51, 51, 51, 0.1);
+            border-radius: 24px;
+            .btn-card{
+                background-color: $color-blue;
+                color: #FFFFFF;
+            }
+        }
+        .icon{
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            width: 67px;
+            height: 67px;
+            margin-bottom: 35px;
+            .icon-card{
+                path{
+                    fill: #FFFFFF;
+                }
+            }
+        }
+        .title{
+            @include setFontProps(24, 36, 700);
+            color: $color-heading;
+            margin-bottom: 24px;
+        }
+        .content{
+            @include setFontProps(16, 24, 400);
+            margin-bottom: 30px;
+        }
+        .btn-card{
+            @include setFontProps(16, 24, 500);
+            border: none;
+            background: #E0E0E0;
+            border-radius: 12px;
+            color: $color-small;
+            width: 116px;
+            height: 42px;
         }
     }
+}
+.work{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    .heading{
+        width: 267px;
+        margin-bottom: 48px;
+        margin-left: 45px;
+    }
+    .project-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 35.63px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .projects{
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        .project{
+            display: flex;
+            flex-direction: column;
+            .project-img{
+                width: 100%;
+                height: auto;
+                border-radius: 24px;
+                margin-bottom: 12.43px;
+            }
+            .tech{
+                @include setFontProps(12, 18, 300);
+                color: $color-small; 
+            }
+            .name{
+                @include setFontProps(18, 27, 500);
+                color: $color-heading;
+            }
+        }
+    }
+    .see-more{
+        @include setFontProps(18, 27, 500);
+        color: $color-blue;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        .icon{
+            path{
+                fill: $color-blue;
+            }
+        }
+    }
+}
+.team{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 100.31px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    .team-info{
+        display: flex;
+        flex-direction: column;
+        width: 280px;
+        .pre-heading{
+            @include setFontProps(18, 27, 500);
+            color: $color-red;
+            margin-bottom: 7px;
+        }
+        .heading{
+            @include setFontProps(36, 54, 500);
+            margin-bottom: 14px;
+        }
+        .description{
+            @include setFontProps(16, 24, 400);
+        }        
+    }
+    .team-members{
+        display: grid;
+        grid-template-columns: 178.16px auto;
+        align-items: center;
+        gap: 8.91px;
+        div{
+            display: grid;
+            grid-template-rows: 144.76px 1fr;
+            gap: 8.91px;
+            .member{
+                height: 100% !important;
+                width: auto;
+            }
+        }
+        .member{
+            border-radius: 24px;
+        }
+    }
+}
+.clients{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 27px;
+    blockquote{
+        @include setFontProps(24, 36, 500);
+        color: $color-heading;
+    }
+    .quote-author{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 82px 1fr;
+        column-gap: 30px;
+        align-items: center;
+        grid-template-areas: 
+        "pic name"
+        "pic role";
+        img{
+            grid-area: pic;
+            border-radius: 12px;
+        }
+        .name{
+            grid-area: name;
+            @include setFontProps(24, 36, 500);
+            color: $color-heading;
+        }
+        .role{
+            grid-area: role;
+            @include setFontProps(18, 27, 500);
+            color: $color-small;
+        }
+    }
+
+}
+footer{
+    background-color: #100E1D;
+    padding-left: 41px;
+    padding-right: 41px;
+    display: flex;
+    flex-direction: column;
+    .footer-items{
+        margin-top: 36px;
+        margin-bottom: 154px;
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+    }
+    .nav{
+        ul{
+            display: flex;
+            flex-direction: column;
+            font-size: 18px;
+            line-height: 200%;
+            font-weight: 400;
+            li{
+                a{
+                    text-decoration: none;
+                    color: #FFFFFF;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    .social{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .logo{
+            font-family: $font-secondary;
+            @include setFontProps(36, 53, 800);
+            color: #F2F2F2;
+        }
+        .social-icons{
+            display: flex;
+            gap: 11px;
+        }
+    }
+    .licence{
+        @include setFontProps(14, 17, 500);
+        color: $color-licence;
+        text-align: center;
+        margin-bottom: 24px;
+        .author{
+            text-decoration: none;
+            color: $color-licence;
+            font-weight: 700;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+    
 }
 
 @media screen and (min-width: 768px) {
@@ -50,10 +410,5 @@ footer{
 }
 
 @media screen and (min-width: 992px) {
-    .container{
-        padding: {
-            left: $padding-desktop;
-            right: $padding-desktop;
-        };
-    }
+    
 }
