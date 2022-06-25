@@ -95,16 +95,30 @@ body.block{
 header{
     position: relative;
     padding: {
-        left:10px;
-        right: 10px;
+        left:widthInVW(10);
+        right:widthInVW(10);
     };
-    margin-bottom: 102px;
     .navbar{
+        background-color: #FFFFFF;
+        z-index: 600;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-top:15px;
+        padding: {
+            top: 15px;
+            left:widthInVW(10);
+            right:widthInVW(10);
+        };
         margin-bottom: heightInVH(48);
+        transition: 0.4s;
+        &.sticky{
+            padding-top: 4px;
+            padding-bottom: 2px;
+            width: 100%;
+            left: 0;
+            position: fixed;
+            box-shadow: 0 1px 6px 0 rgba(#333333, 0.2);
+        }
         .logo{
             font-family: $font-secondary;
             @include setFontProps(24,35,800);
@@ -112,12 +126,12 @@ header{
         }
         nav{
             display: none;
-            @media screen and (max-width: 762px) {
+            @media screen and (max-width: 991px) {
                 &.open{
                     padding: {
                         top: 15px;
-                        left: 10px;
-                        right: 10px;
+                        left: widthInVW(10);
+                        right: widthInVW(10);
                     };
                     z-index: 1000;
                     position: fixed;
@@ -167,6 +181,10 @@ header{
         }
     }
     .banner{
+        padding: {
+            left:widthInVW(10);
+            right:widthInVW(10);
+        };
         .banner-text{
             margin-left: widthInVW(30);
             margin-bottom: 15px;
@@ -184,6 +202,10 @@ header{
         }
     }
     .contact{
+        padding: {
+            left:widthInVW(10);
+            right:widthInVW(10);
+        };
         margin-left: widthInVW(30);
         margin-right: widthInVW(30);
         .contact-text{
@@ -208,12 +230,12 @@ main{
     margin-bottom: 100px;
 }
 .service{
+    padding-top: 102px;
     display: flex;
     flex-direction: column;
     gap: 43px;
-    margin-bottom: 97px;
     .heading{
-        margin-left: 50px;
+        margin-left: widthInVW(50);
         width: widthInVW(259);
     }
     .cards-wrapper{
@@ -271,20 +293,20 @@ main{
     }
 }
 .work{
+    padding-top: 97px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 100px;
     .heading{
         width: 267px;
         margin-bottom: 48px;
-        margin-left: 45px;
+        margin-left: widthInVW(45);
     }
     .project-wrapper{
         display: flex;
         flex-direction: column;
         gap: 35.63px;
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: widthInVW(10);
+        margin-right: widthInVW(10);
     }
     .projects{
         display: flex;
@@ -311,6 +333,7 @@ main{
     }
     .see-more{
         @include setFontProps(18, 27, 500);
+        text-decoration: none;
         color: $color-blue;
         display: flex;
         align-items: center;
@@ -323,9 +346,9 @@ main{
     }
 }
 .team{
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 100.31px;
+    padding-top: 100px;
+    margin-left: widthInVW(10);
+    margin-right: widthInVW(10);
     display: flex;
     flex-direction: column;
     gap: 36px;
@@ -376,10 +399,11 @@ main{
     }
 }
 .clients{
+    padding-top: 100.31px;
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: widthInVW(10);
+    margin-right: widthInVW(10);
     gap: 27px;
     blockquote{
         @include setFontProps(24, 36, 500);
@@ -413,8 +437,8 @@ main{
 }
 footer{
     background-color: #100E1D;
-    padding-left: 41px;
-    padding-right: 41px;
+    padding-left: widthInVW(41);
+    padding-right: widthInVW(41);
     display: flex;
     flex-direction: column;
     .footer-items{
@@ -474,10 +498,6 @@ footer{
 }
 
 @media screen and (min-width: 768px) {
-    
-}
-
-@media screen and (min-width: 992px) {
     .heading-lg{
         @include setFontProps(48, 72, 500);
     }
@@ -508,13 +528,170 @@ footer{
         }
     }
     header{
-        padding: {
-            right:widthInVW(52, 1440);
-            left:widthInVW(52, 1440);
-        };
         .navbar{
-            padding-top: 42px;
-            margin-bottom: 96px;
+            .logo{
+                @include setFontProps(36, 53, 800);
+            }
+            .menu-burger{
+                .icon-menu{
+                    height: 30px;
+                    width: auto;
+                }
+            }
+            nav{
+                ul{
+                    gap: 50px;
+                    @include setFontProps(24, 36, 700);
+                }
+            }
+        }
+        .banner{
+            .banner-text{
+                width: widthInRem(543);
+                .pre-heading{
+                    @include setFontProps(18, 27, 500);
+                }
+            }
+        }
+        .contact{
+            width: widthInRem(366);
+            .contact-text{
+                .heading{
+                    width: 100%;
+                }
+                .content{
+                    width: 100%;
+                    @include setFontProps(18, 27, 400);
+                }
+            }
+        }
+    }
+    main{
+        margin-left: widthInVW(10);
+        margin-right:widthInVW(10);
+    }
+    .service{
+        gap: heightInVH(42, 900);
+        .heading{
+            width: widthInRem(346);
+            margin-left: 15px;
+        }
+        .cards-wrapper{
+            align-self: center;
+            flex-direction: row;
+            gap: 0;
+        }
+        .card{
+            padding-top: 46px;
+            padding-bottom: 46px;
+            .icon{
+                .icon-card{
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+            .content{
+                width: widthInVW(88);
+            }
+        }
+    }
+    .work{
+        padding-top: heightInVH(194, 900);
+        .heading{
+            width: 448px;
+            margin-left: 15px;
+        }
+        .project-wrapper{
+            position: relative;
+            .projects{
+                display: grid;
+                grid-template-columns: 1fr 1fr;                
+                column-gap: 20px;
+                .project{
+                    .tech{
+                        @include setFontProps(14, 21, 300);
+                    }
+                    .name{
+                        @include setFontProps(24, 36, 500);
+                    }
+                }
+                .project:nth-child(odd){
+                    margin-top: heightInVH(100, 900);
+                }
+            }
+            .see-more{
+                @include setFontProps(24, 36, 500);
+                z-index: 500;
+                position: absolute;
+                bottom: 4px;
+                right: 0;
+            }
+        }
+    }
+    .team{
+        padding-top: heightInVH(219, 900);
+        flex-direction: row;
+        align-items: center;
+        gap: widthInVW(80, 1440);
+        .team-info{
+            width: widthInRem(280);
+        }
+        .team-members{
+            width: auto;
+            gap: 10px;
+            div{
+                gap: 10px;
+            }
+        }
+    }
+    .clients{
+        padding-top: heightInVH(196, 900);
+        blockquote{
+            @include setFontProps(36, 54, 500);
+        }
+    }
+    footer{
+        .form-email{
+            width: widthInRem(350);
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .heading-lg{
+        @include setFontProps(48, 72, 500);
+    }
+    .form-email{
+        width: WidthInRem(350);
+        gap: 9px;
+        label{
+            @include setFontProps(14, 21, 500);
+        }
+        .input-group{
+            height: 57px;
+            input{
+                @include setFontProps(18, 27, 500);
+                padding-left: 21px;
+                padding-right: 104px;
+            }
+            button{
+                @include setFontProps(18, 27, 500);
+                width: 94px;
+                height: 49px;
+            }
+        }
+    }
+    header{
+        .navbar{
+            padding: {
+                top: heightInVH(42, 900);
+                right:widthInVW(52, 1440);
+                left:widthInVW(52, 1440);
+            };
+            &.sticky{
+                padding-top: heightInVH(8, 900);
+                padding-bottom: heightInVH(8, 900);
+            }
             .logo{
                 @include setFontProps(36, 53, 800);
             }
@@ -543,11 +720,15 @@ footer{
             }
         }
         .banner{
-            margin-bottom: 42px;            
+            padding: {
+                right:widthInVW(52, 1440);
+                left:widthInVW(52, 1440);
+            };
+            margin-bottom: heightInVH(42, 900);            
             .banner-text{
                 margin-left: widthInVW(225, 1440);
                 width: widthInRem(543);
-                margin-bottom: 42px;
+                margin-bottom: heightInVH(42, 900);
                 gap: 16px;
                 .pre-heading{
                     @include setFontProps(18, 27, 500);
@@ -555,11 +736,15 @@ footer{
             }
         }
         .contact{
+            padding: {
+                right:0;
+                left:0;
+            };
             width: widthInRem(366);
-            margin-left: widthInVW(225, 1440);
+            margin-left: widthInVW(277, 1440);
             .contact-text{
                 gap: 42px;
-                margin-bottom: 42px;
+                margin-bottom: heightInVH(42, 900);
                 .heading{
                     width: 100%;
                 }
@@ -573,11 +758,11 @@ footer{
     main{
         margin-left: widthInVW(165, 1440);
         margin-right: widthInVW(165, 1440);
-        margin-bottom: 200px;
+        margin-bottom: heightInVH(200, 900);
     }
     .service{
-        gap: 42px;
-        margin-bottom: 194px;
+        padding-top: heightInVH(96, 900);
+        gap: heightInVH(42, 900);
         .heading{
             width: widthInRem(346);
             margin-left: 0;
@@ -602,7 +787,7 @@ footer{
         }
     }
     .work{
-        margin-bottom: 219px;
+        padding-top: heightInVH(194, 900);
         .heading{
             width: 448px;
             margin-left: 0;
@@ -624,7 +809,7 @@ footer{
                     }
                 }
                 .project:nth-child(odd){
-                    margin-top: 176px;
+                    margin-top: heightInVH(176, 900);
                 }
             }
             .see-more{
@@ -637,12 +822,13 @@ footer{
         }
     }
     .team{
+        padding-top: heightInVH(219, 900);
         margin-left: 0;
         margin-right: 0;
         flex-direction: row;
         align-items: center;
         gap: widthInVW(188, 1440);
-        margin-bottom: 196px;
+        
         .team-info{
             width: widthInRem(280);
         }
@@ -655,6 +841,7 @@ footer{
         }
     }
     .clients{
+        padding-top: heightInVH(196, 900);
         margin:0;
         gap: 45px;
         blockquote{
@@ -665,7 +852,7 @@ footer{
     footer{
         padding-left: widthInVW(168, 1440);
         .footer-items{
-            margin-top: 46px;
+            margin-top: heightInVH(46, 900);
             flex-direction: row;
             gap:0;
         }

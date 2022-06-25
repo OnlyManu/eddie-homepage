@@ -142,16 +142,28 @@ body.block {
 
 header {
   position: relative;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 102px;
+  padding-left: 2.6666666667vw;
+  padding-right: 2.6666666667vw;
 }
 header .navbar {
+  background-color: #FFFFFF;
+  z-index: 600;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 15px;
+  padding-left: 2.6666666667vw;
+  padding-right: 2.6666666667vw;
   margin-bottom: 7.1964017991vh;
+  transition: 0.4s;
+}
+header .navbar.sticky {
+  padding-top: 4px;
+  padding-bottom: 2px;
+  width: 100%;
+  left: 0;
+  position: fixed;
+  box-shadow: 0 1px 6px 0 rgba(51, 51, 51, 0.2);
 }
 header .navbar .logo {
   font-family: "Heebo", sans-serif;
@@ -163,11 +175,11 @@ header .navbar .logo {
 header .navbar nav {
   display: none;
 }
-@media screen and (max-width: 762px) {
+@media screen and (max-width: 991px) {
   header .navbar nav.open {
     padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 2.6666666667vw;
+    padding-right: 2.6666666667vw;
     z-index: 1000;
     position: fixed;
     top: 0;
@@ -211,6 +223,10 @@ header .navbar nav li.active a::after {
 header .navbar nav .close {
   display: none;
 }
+header .banner {
+  padding-left: 2.6666666667vw;
+  padding-right: 2.6666666667vw;
+}
 header .banner .banner-text {
   margin-left: 8vw;
   margin-bottom: 15px;
@@ -229,6 +245,8 @@ header .banner .banner-img {
   margin-bottom: 22px;
 }
 header .contact {
+  padding-left: 2.6666666667vw;
+  padding-right: 2.6666666667vw;
   margin-left: 8vw;
   margin-right: 8vw;
 }
@@ -255,13 +273,13 @@ main {
 }
 
 .service {
+  padding-top: 102px;
   display: flex;
   flex-direction: column;
   gap: 43px;
-  margin-bottom: 97px;
 }
 .service .heading {
-  margin-left: 50px;
+  margin-left: 13.3333333333vw;
   width: 69.0666666667vw;
 }
 .service .cards-wrapper {
@@ -323,21 +341,21 @@ main {
 }
 
 .work {
+  padding-top: 97px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 100px;
 }
 .work .heading {
   width: 267px;
   margin-bottom: 48px;
-  margin-left: 45px;
+  margin-left: 12vw;
 }
 .work .project-wrapper {
   display: flex;
   flex-direction: column;
   gap: 35.63px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 2.6666666667vw;
+  margin-right: 2.6666666667vw;
 }
 .work .projects {
   display: flex;
@@ -370,6 +388,7 @@ main {
   font-size: 1.2857142857rem;
   font-weight: 500;
   line-height: 1.9285714286rem;
+  text-decoration: none;
   color: #2D9CDB;
   display: flex;
   align-items: center;
@@ -380,9 +399,9 @@ main {
 }
 
 .team {
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 100.31px;
+  padding-top: 100px;
+  margin-left: 2.6666666667vw;
+  margin-right: 2.6666666667vw;
   display: flex;
   flex-direction: column;
   gap: 36px;
@@ -440,10 +459,11 @@ main {
 }
 
 .clients {
+  padding-top: 100.31px;
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 2.6666666667vw;
+  margin-right: 2.6666666667vw;
   gap: 27px;
 }
 .clients blockquote {
@@ -481,8 +501,8 @@ main {
 
 footer {
   background-color: #100E1D;
-  padding-left: 41px;
-  padding-right: 41px;
+  padding-left: 10.9333333333vw;
+  padding-right: 10.9333333333vw;
   display: flex;
   flex-direction: column;
 }
@@ -540,7 +560,7 @@ footer .licence .author:hover {
   text-decoration: underline;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .heading-lg {
     font-size: 3.4285714286rem;
     font-weight: 500;
@@ -586,13 +606,181 @@ footer .licence .author:hover {
     height: 49px;
   }
 
-  header {
+  header .navbar .logo {
+    font-size: 2.5714285714rem;
+    font-weight: 800;
+    line-height: 3.7857142857rem;
+  }
+  header .navbar .menu-burger .icon-menu {
+    height: 30px;
+    width: auto;
+  }
+  header .navbar nav ul {
+    gap: 50px;
+    font-size: 1.7142857143rem;
+    font-weight: 700;
+    line-height: 2.5714285714rem;
+  }
+  header .banner .banner-text {
+    width: 38.7857142857rem;
+  }
+  header .banner .banner-text .pre-heading {
+    font-size: 1.2857142857rem;
+    font-weight: 500;
+    line-height: 1.9285714286rem;
+  }
+  header .contact {
+    width: 26.1428571429rem;
+  }
+  header .contact .contact-text .heading {
+    width: 100%;
+  }
+  header .contact .contact-text .content {
+    width: 100%;
+    font-size: 1.2857142857rem;
+    font-weight: 400;
+    line-height: 1.9285714286rem;
+  }
+
+  main {
+    margin-left: 2.6666666667vw;
+    margin-right: 2.6666666667vw;
+  }
+
+  .service {
+    gap: 4.6666666667vh;
+  }
+  .service .heading {
+    width: 24.7142857143rem;
+    margin-left: 15px;
+  }
+  .service .cards-wrapper {
+    align-self: center;
+    flex-direction: row;
+    gap: 0;
+  }
+  .service .card {
+    padding-top: 46px;
+    padding-bottom: 46px;
+  }
+  .service .card .icon .icon-card {
+    width: 28px;
+    height: 28px;
+  }
+  .service .card .content {
+    width: 23.4666666667vw;
+  }
+
+  .work {
+    padding-top: 21.5555555556vh;
+  }
+  .work .heading {
+    width: 448px;
+    margin-left: 15px;
+  }
+  .work .project-wrapper {
+    position: relative;
+  }
+  .work .project-wrapper .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+  .work .project-wrapper .projects .project .tech {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5rem;
+  }
+  .work .project-wrapper .projects .project .name {
+    font-size: 1.7142857143rem;
+    font-weight: 500;
+    line-height: 2.5714285714rem;
+  }
+  .work .project-wrapper .projects .project:nth-child(odd) {
+    margin-top: 11.1111111111vh;
+  }
+  .work .project-wrapper .see-more {
+    font-size: 1.7142857143rem;
+    font-weight: 500;
+    line-height: 2.5714285714rem;
+    z-index: 500;
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+  }
+
+  .team {
+    padding-top: 24.3333333333vh;
+    flex-direction: row;
+    align-items: center;
+    gap: 5.5555555556vw;
+  }
+  .team .team-info {
+    width: 20rem;
+  }
+  .team .team-members {
+    width: auto;
+    gap: 10px;
+  }
+  .team .team-members div {
+    gap: 10px;
+  }
+
+  .clients {
+    padding-top: 21.7777777778vh;
+  }
+  .clients blockquote {
+    font-size: 2.5714285714rem;
+    font-weight: 500;
+    line-height: 3.8571428571rem;
+  }
+
+  footer .form-email {
+    width: 25rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .heading-lg {
+    font-size: 3.4285714286rem;
+    font-weight: 500;
+    line-height: 5.1428571429rem;
+  }
+
+  .form-email {
+    width: WidthInRem(350);
+    gap: 9px;
+  }
+  .form-email label {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+  }
+  .form-email .input-group {
+    height: 57px;
+  }
+  .form-email .input-group input {
+    font-size: 1.2857142857rem;
+    font-weight: 500;
+    line-height: 1.9285714286rem;
+    padding-left: 21px;
+    padding-right: 104px;
+  }
+  .form-email .input-group button {
+    font-size: 1.2857142857rem;
+    font-weight: 500;
+    line-height: 1.9285714286rem;
+    width: 94px;
+    height: 49px;
+  }
+
+  header .navbar {
+    padding-top: 4.6666666667vh;
     padding-right: 3.6111111111vw;
     padding-left: 3.6111111111vw;
   }
-  header .navbar {
-    padding-top: 42px;
-    margin-bottom: 96px;
+  header .navbar.sticky {
+    padding-top: 0.8888888889vh;
+    padding-bottom: 0.8888888889vh;
   }
   header .navbar .logo {
     font-size: 2.5714285714rem;
@@ -623,12 +811,14 @@ footer .licence .author:hover {
     display: none;
   }
   header .banner {
-    margin-bottom: 42px;
+    padding-right: 3.6111111111vw;
+    padding-left: 3.6111111111vw;
+    margin-bottom: 4.6666666667vh;
   }
   header .banner .banner-text {
     margin-left: 15.625vw;
     width: 38.7857142857rem;
-    margin-bottom: 42px;
+    margin-bottom: 4.6666666667vh;
     gap: 16px;
   }
   header .banner .banner-text .pre-heading {
@@ -637,12 +827,14 @@ footer .licence .author:hover {
     line-height: 1.9285714286rem;
   }
   header .contact {
+    padding-right: 0;
+    padding-left: 0;
     width: 26.1428571429rem;
-    margin-left: 15.625vw;
+    margin-left: 19.2361111111vw;
   }
   header .contact .contact-text {
     gap: 42px;
-    margin-bottom: 42px;
+    margin-bottom: 4.6666666667vh;
   }
   header .contact .contact-text .heading {
     width: 100%;
@@ -657,12 +849,12 @@ footer .licence .author:hover {
   main {
     margin-left: 11.4583333333vw;
     margin-right: 11.4583333333vw;
-    margin-bottom: 200px;
+    margin-bottom: 22.2222222222vh;
   }
 
   .service {
-    gap: 42px;
-    margin-bottom: 194px;
+    padding-top: 10.6666666667vh;
+    gap: 4.6666666667vh;
   }
   .service .heading {
     width: 24.7142857143rem;
@@ -686,7 +878,7 @@ footer .licence .author:hover {
   }
 
   .work {
-    margin-bottom: 219px;
+    padding-top: 21.5555555556vh;
   }
   .work .heading {
     width: 448px;
@@ -713,7 +905,7 @@ footer .licence .author:hover {
     line-height: 2.5714285714rem;
   }
   .work .project-wrapper .projects .project:nth-child(odd) {
-    margin-top: 176px;
+    margin-top: 19.5555555556vh;
   }
   .work .project-wrapper .see-more {
     font-size: 1.7142857143rem;
@@ -726,12 +918,12 @@ footer .licence .author:hover {
   }
 
   .team {
+    padding-top: 24.3333333333vh;
     margin-left: 0;
     margin-right: 0;
     flex-direction: row;
     align-items: center;
     gap: 13.0555555556vw;
-    margin-bottom: 196px;
   }
   .team .team-info {
     width: 20rem;
@@ -745,6 +937,7 @@ footer .licence .author:hover {
   }
 
   .clients {
+    padding-top: 21.7777777778vh;
     margin: 0;
     gap: 45px;
   }
@@ -759,7 +952,7 @@ footer .licence .author:hover {
     padding-left: 11.6666666667vw;
   }
   footer .footer-items {
-    margin-top: 46px;
+    margin-top: 5.1111111111vh;
     flex-direction: row;
     gap: 0;
   }
