@@ -84,13 +84,17 @@ html{
     color: $color-primary;
     background-color: #FFFFFF;
     font-size: 14px;
+    scroll-behavior: smooth;
+}
+body.block{
+    overflow-y: hidden;
 }
 .container{
     width: 100%;
 }
 header{
+    position: relative;
     padding: {
-        top: 15px;
         left:10px;
         right: 10px;
     };
@@ -99,6 +103,7 @@ header{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding-top:15px;
         margin-bottom: heightInVH(48);
         .logo{
             font-family: $font-secondary;
@@ -107,13 +112,65 @@ header{
         }
         nav{
             display: none;
+            @media screen and (max-width: 762px) {
+                &.open{
+                    padding: {
+                        top: 15px;
+                        left: 10px;
+                        right: 10px;
+                    };
+                    z-index: 1000;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: #FFFFFF;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 80px;
+                    .close{
+                        display: inherit;
+                        align-self: flex-end;
+                    }
+                }
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 30px;
+                    font-size: 18px;
+                    line-height: 21px;
+                    font-weight: 700;
+                }
+            }
+            li{
+                a{
+                    position: relative;
+                    color: $color-heading;
+                    text-decoration: none;
+                }
+                &.active a::after{
+                    content: "";
+                    background-color: $color-blue;
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    transform: translateY(4px);
+                }
+            }
+            .close{
+                display: none;
+            }
         }
     }
     .banner{
         .banner-text{
             margin-left: widthInVW(30);
             margin-bottom: 15px;
-            width: widthInVW(272);
+            width: widthInRem(272);
             .pre-heading{
                 @include setFontProps(12, 18, 500);
                 color: $color-blue;
@@ -193,6 +250,7 @@ main{
             }
         }
         .title{
+            display: block;
             @include setFontProps(24, 36, 700);
             color: $color-heading;
             margin-bottom: 24px;
@@ -289,17 +347,27 @@ main{
         }        
     }
     .team-members{
+        width: 100%;
         display: grid;
-        grid-template-columns: 178.16px auto;
-        align-items: center;
+        grid-template-columns: 50.18% auto;
         gap: 8.91px;
+        align-items: center;
+        img{
+            max-width: none !important;
+            width: 100%;
+        }
         div{
             display: grid;
-            grid-template-rows: 144.76px 1fr;
+            grid-template-rows: auto 1fr;
             gap: 8.91px;
-            .member{
-                height: 100% !important;
-                width: auto;
+            height: fit-content;
+            .member-1{
+                height: auto;
+                width: 80.20%;
+            }
+            .member-2{
+                height: auto;
+                width: 100%;
             }
         }
         .member{
@@ -410,5 +478,205 @@ footer{
 }
 
 @media screen and (min-width: 992px) {
-    
+    .heading-lg{
+        @include setFontProps(48, 72, 500);
+    }
+    .heading-md{
+        @include setFontProps(48, 72, 500);
+    }
+    .heading-sm{
+        @include setFontProps(36, 54, 500);
+    }
+    .form-email{
+        width: WidthInRem(350);
+        gap: 9px;
+        label{
+            @include setFontProps(14, 21, 500);
+        }
+        .input-group{
+            height: 57px;
+            input{
+                @include setFontProps(18, 27, 500);
+                padding-left: 21px;
+                padding-right: 104px;
+            }
+            button{
+                @include setFontProps(18, 27, 500);
+                width: 94px;
+                height: 49px;
+            }
+        }
+    }
+    header{
+        padding: {
+            right:widthInVW(52, 1440);
+            left:widthInVW(52, 1440);
+        };
+        .navbar{
+            padding-top: 42px;
+            margin-bottom: 96px;
+            .logo{
+                @include setFontProps(36, 53, 800);
+            }
+            nav{
+                display: flex;
+                ul{
+                    display: flex;
+                    flex-direction: row;
+                    gap: widthInVW(60, 1440);
+                    @include setFontProps(24, 36, 500);
+                }
+                li{
+                    &.active a{
+                        color: $color-blue;
+                    }
+                    &.active a::after{
+                        display: none;
+                    }
+                }
+                .close{
+                    display: none;
+                }
+            }
+            .menu-burger{
+                display: none;
+            }
+        }
+        .banner{
+            margin-bottom: 42px;            
+            .banner-text{
+                margin-left: widthInVW(225, 1440);
+                width: widthInRem(543);
+                margin-bottom: 42px;
+                gap: 16px;
+                .pre-heading{
+                    @include setFontProps(18, 27, 500);
+                }
+            }
+        }
+        .contact{
+            width: widthInRem(366);
+            margin-left: widthInVW(225, 1440);
+            .contact-text{
+                gap: 42px;
+                margin-bottom: 42px;
+                .heading{
+                    width: 100%;
+                }
+                .content{
+                    width: 100%;
+                    @include setFontProps(18, 27, 400);
+                }
+            }
+        }
+    }
+    main{
+        margin-left: widthInVW(165, 1440);
+        margin-right: widthInVW(165, 1440);
+        margin-bottom: 200px;
+    }
+    .service{
+        gap: 42px;
+        margin-bottom: 194px;
+        .heading{
+            width: widthInRem(346);
+            margin-left: 0;
+        }
+        .cards-wrapper{
+            align-self: center;
+            flex-direction: row;
+            gap: widthInVW(40, 1440);
+        }
+        .card{
+            padding-top: 46px;
+            padding-bottom: 46px;
+            .icon{
+                .icon-card{
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+            .content{
+                width: widthInVW(273, 1440);
+            }
+        }
+    }
+    .work{
+        margin-bottom: 219px;
+        .heading{
+            width: 448px;
+            margin-left: 0;
+            margin-bottom: 12px;
+        }
+        .project-wrapper{
+            position: relative;
+            margin: 0;
+            .projects{
+                display: grid;
+                grid-template-columns: 1fr 1fr;                
+                column-gap: 20px;
+                .project{
+                    .tech{
+                        @include setFontProps(14, 21, 300);
+                    }
+                    .name{
+                        @include setFontProps(24, 36, 500);
+                    }
+                }
+                .project:nth-child(odd){
+                    margin-top: 176px;
+                }
+            }
+            .see-more{
+                @include setFontProps(24, 36, 500);
+                z-index: 500;
+                position: absolute;
+                bottom: 4px;
+                right: 0;
+            }
+        }
+    }
+    .team{
+        margin-left: 0;
+        margin-right: 0;
+        flex-direction: row;
+        align-items: center;
+        gap: widthInVW(188, 1440);
+        margin-bottom: 196px;
+        .team-info{
+            width: widthInRem(280);
+        }
+        .team-members{
+            width: auto;
+            gap: 24px;
+            div{
+                gap: 24px;
+            }
+        }
+    }
+    .clients{
+        margin:0;
+        gap: 45px;
+        blockquote{
+            @include setFontProps(36, 54, 500);
+            width: widthInRem(937);
+        }
+    }
+    footer{
+        padding-left: widthInVW(168, 1440);
+        .footer-items{
+            margin-top: 46px;
+            flex-direction: row;
+            gap:0;
+        }
+        .nav{
+            margin-right: widthInVW(245, 1440);
+        }
+        .social{
+            margin-right: widthInVW(356, 1440);;
+        }
+        .form-email{
+            width: widthInRem(350);
+        }
+    }
 }
