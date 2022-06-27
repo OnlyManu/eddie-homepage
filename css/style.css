@@ -131,6 +131,13 @@ html {
   font-size: 14px;
   scroll-behavior: smooth;
 }
+html .load-hidden {
+  visibility: hidden;
+}
+
+::placeholder {
+  color: #BDBDBD;
+}
 
 body.block {
   overflow-y: hidden;
@@ -142,28 +149,19 @@ body.block {
 
 header {
   position: relative;
-  padding-left: 2.6666666667vw;
-  padding-right: 2.6666666667vw;
-}
-header .navbar {
-  background-color: #FFFFFF;
-  z-index: 600;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding-top: 15px;
   padding-left: 2.6666666667vw;
   padding-right: 2.6666666667vw;
+  background-color: #FFFFFF;
   margin-bottom: 7.1964017991vh;
   transition: 0.4s;
 }
-header .navbar.sticky {
-  padding-top: 4px;
-  padding-bottom: 2px;
-  width: 100%;
-  left: 0;
-  position: fixed;
-  box-shadow: 0 1px 6px 0 rgba(51, 51, 51, 0.2);
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2.6666666667vw;
+  padding-right: 2.6666666667vw;
 }
 header .navbar .logo {
   font-family: "Heebo", sans-serif;
@@ -180,7 +178,7 @@ header .navbar nav {
     padding-top: 15px;
     padding-left: 2.6666666667vw;
     padding-right: 2.6666666667vw;
-    z-index: 1000;
+    z-index: 10000000;
     position: fixed;
     top: 0;
     left: 0;
@@ -223,43 +221,48 @@ header .navbar nav li.active a::after {
 header .navbar nav .close {
   display: none;
 }
-header .banner {
+
+.hero {
   padding-left: 2.6666666667vw;
   padding-right: 2.6666666667vw;
 }
-header .banner .banner-text {
+.hero .banner {
+  padding-left: 2.6666666667vw;
+  padding-right: 2.6666666667vw;
+}
+.hero .banner .banner-text {
   margin-left: 8vw;
   margin-bottom: 15px;
   width: 19.4285714286rem;
 }
-header .banner .banner-text .pre-heading {
+.hero .banner .banner-text .pre-heading {
   font-size: 0.8571428571rem;
   font-weight: 500;
   line-height: 1.2857142857rem;
   color: #2D9CDB;
 }
-header .banner .banner-img {
+.hero .banner .banner-img {
   width: 100%;
   height: auto;
   border-radius: 18px;
   margin-bottom: 22px;
 }
-header .contact {
+.hero .contact {
   padding-left: 2.6666666667vw;
   padding-right: 2.6666666667vw;
   margin-left: 8vw;
   margin-right: 8vw;
 }
-header .contact .contact-text {
+.hero .contact .contact-text {
   margin-bottom: 31px;
   display: flex;
   flex-direction: column;
   gap: 33px;
 }
-header .contact .heading {
+.hero .contact .heading {
   width: 58.6666666667vw;
 }
-header .contact .content {
+.hero .contact .content {
   width: 73.3333333333vw;
   font-size: 0.8571428571rem;
   font-weight: 400;
@@ -295,11 +298,11 @@ main {
   padding-left: 34px;
   padding-right: 34px;
 }
-.service .card:hover {
+.service .card.hover {
   box-shadow: 0px 10px 30px rgba(51, 51, 51, 0.1);
   border-radius: 24px;
 }
-.service .card:hover .btn-card {
+.service .card.hover .btn-card {
   background-color: #2D9CDB;
   color: #FFFFFF;
 }
@@ -621,21 +624,22 @@ footer .licence .author:hover {
     font-weight: 700;
     line-height: 2.5714285714rem;
   }
-  header .banner .banner-text {
+
+  .hero .banner .banner-text {
     width: 38.7857142857rem;
   }
-  header .banner .banner-text .pre-heading {
+  .hero .banner .banner-text .pre-heading {
     font-size: 1.2857142857rem;
     font-weight: 500;
     line-height: 1.9285714286rem;
   }
-  header .contact {
+  .hero .contact {
     width: 26.1428571429rem;
   }
-  header .contact .contact-text .heading {
+  .hero .contact .contact-text .heading {
     width: 100%;
   }
-  header .contact .contact-text .content {
+  .hero .contact .contact-text .content {
     width: 100%;
     font-size: 1.2857142857rem;
     font-weight: 400;
@@ -773,14 +777,22 @@ footer .licence .author:hover {
     height: 49px;
   }
 
-  header .navbar {
+  header {
     padding-top: 4.6666666667vh;
-    padding-right: 3.6111111111vw;
-    padding-left: 3.6111111111vw;
   }
-  header .navbar.sticky {
+  header.sticky {
+    z-index: 1000000;
+    width: 100%;
     padding-top: 0.8888888889vh;
     padding-bottom: 0.8888888889vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    box-shadow: 0 1px 6px 0 rgba(51, 51, 51, 0.2);
+  }
+  header .navbar {
+    padding-right: 3.6111111111vw;
+    padding-left: 3.6111111111vw;
   }
   header .navbar .logo {
     font-size: 2.5714285714rem;
@@ -810,36 +822,37 @@ footer .licence .author:hover {
   header .navbar .menu-burger {
     display: none;
   }
-  header .banner {
+
+  .hero .banner {
     padding-right: 3.6111111111vw;
     padding-left: 3.6111111111vw;
     margin-bottom: 4.6666666667vh;
   }
-  header .banner .banner-text {
+  .hero .banner .banner-text {
     margin-left: 15.625vw;
     width: 38.7857142857rem;
     margin-bottom: 4.6666666667vh;
     gap: 16px;
   }
-  header .banner .banner-text .pre-heading {
+  .hero .banner .banner-text .pre-heading {
     font-size: 1.2857142857rem;
     font-weight: 500;
     line-height: 1.9285714286rem;
   }
-  header .contact {
+  .hero .contact {
     padding-right: 0;
     padding-left: 0;
     width: 26.1428571429rem;
     margin-left: 19.2361111111vw;
   }
-  header .contact .contact-text {
+  .hero .contact .contact-text {
     gap: 42px;
     margin-bottom: 4.6666666667vh;
   }
-  header .contact .contact-text .heading {
+  .hero .contact .contact-text .heading {
     width: 100%;
   }
-  header .contact .contact-text .content {
+  .hero .contact .contact-text .content {
     width: 100%;
     font-size: 1.2857142857rem;
     font-weight: 400;

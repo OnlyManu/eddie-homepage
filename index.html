@@ -21,11 +21,11 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <title>Devchallenges</title>
-
+    <script src="https://unpkg.com/scrollreveal"></script>
   </head>
   <body>
     <div class="container">
-      <header id="Home">
+      <header>
         <div class="navbar">
           <span class="logo">Edie</span>
           <span class="menu-burger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon-menu"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></span>
@@ -40,14 +40,16 @@
             </ul>
           </nav>
         </div>
+      </header>
+      <section id="Home" class="hero">
         <div class="banner">
-          <div class="banner-text">
+          <div class="banner-text load-hidden">
             <span class="pre-heading">Unhappy with your website?</span>
             <h1 class="heading heading-lg">We create beautiful and fast web services</h1>
           </div>
-          <img src="./img/heroImage.jpg" alt="banner image" class="banner-img">
+          <img src="./img/heroImage.jpg" alt="banner image" class="banner-img load-hidden">
         </div>
-        <div class="contact" id="Contact">
+        <div class="contact load-hidden" id="Contact">
           <div class="contact-text">
             <h2 class="heading heading-md">Story, emotion and purpose</h2>
             <p class="content">We help transform your ideas into real world applications that will outperform your toughest competition and help you achieve your strategic goals in short period of time.</p>
@@ -60,12 +62,12 @@
             </div>
           </div>
         </div>
-      </header>
+      </section>
       <main>
         <section class="service" id="Services">
-          <h2 class="heading heading-sm">We offer high demand services</h2>
+          <h2 class="heading heading-sm load-hidden">We offer high demand services</h2>
           <div class="cards-wrapper">
-            <div class="card">
+            <div class="card load-hidden">
               <div class="icon icon-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon-card"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
               </div>
@@ -73,7 +75,7 @@
               <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.</p>
               <button class="btn-card">Get started</button>
             </div>
-            <div class="card">
+            <div class="card hover load-hidden">
               <div class="icon icon-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon-card"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
               </div>
@@ -81,7 +83,7 @@
               <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a metus ac nulla consequat aliquet id quis turpis.</p>
               <button class="btn-card">Get started</button>
             </div>
-            <div class="card">
+            <div class="card load-hidden">
               <div class="icon icon-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="icon-card"><path d="M2 20h20v-4H2v4zm2-3h2v2H4v-2zM2 4v4h20V4H2zm4 3H4V5h2v2zm-4 7h20v-4H2v4zm2-3h2v2H4v-2z"/></svg>
               </div>
@@ -92,25 +94,25 @@
           </div>
         </section>
         <section class="work" id="Our_Works">
-          <h3 class="heading heading-sm">Good design means good business</h3>
+          <h3 class="heading heading-sm load-hidden">Good design means good business</h3>
           <div class="project-wrapper">
             <div class="projects">
-              <div class="project">
+              <div class="project load-hidden">
                 <img src="./img/smarthome.jpg" alt="Smart home dashboard" class="project-img">
                 <span class="tech">Full stack application</span>
                 <span class="name">Smart home dashboard</span>
               </div>
-              <div class="project">
+              <div class="project load-hidden">
                 <img src="./img/onboard.png" alt="Onboard application" class="project-img">
                 <span class="tech">UX/UI design</span>
                 <span class="name">Onboard application</span>
               </div>
-              <div class="project">
+              <div class="project load-hidden">
                 <img src="./img/booking.png" alt="Booking system mobile application" class="project-img">
                 <span class="tech">Mobile application</span>
                 <span class="name">Booking system</span>
               </div>
-              <div class="project">
+              <div class="project load-hidden">
                 <img src="./img/juice-product.png" alt="Juice product homepage" class="project-img">
                 <span class="tech">Front End application</span>
                 <span class="name">Juice product homepage</span>
@@ -120,12 +122,12 @@
           </div>
         </section>
         <section class="team" id="team">
-          <div class="team-info">
+          <div class="team-info load-hidden">
             <span class="pre-heading">Meet the team</span>
             <h2 class="heading heading-sm"> We are chilled and a laidback team</h2>
             <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
-          <div class="team-members">
+          <div class="team-members load-hidden">
             <img src="./img/person3.png" alt="team member picture" class="member">
             <div>
               <img src="./img/person1.png" alt="team member picture" class="member member-1">
@@ -134,8 +136,8 @@
           </div>
         </section>
         <section class="clients" id="Clients">
-          <blockquote>“Fast and outstanding resutls. Edie understands their customer’s needs. They have a young and talented team.”</blockquote>
-          <div class="quote-author">
+          <blockquote class="load-hidden">“Fast and outstanding resutls. Edie understands their customer’s needs. They have a young and talented team.”</blockquote>
+          <div class="quote-author load-hidden">
             <img src="./img/person4.png" alt="Carlos Tran picture">
             <span class="name">Carlos Tran</span>
             <span class="role">The Decorate Gatsby</span>
@@ -184,7 +186,8 @@
         <p class="licence">created by <a href="https://github.com/OnlyManu/" class="author">onlymanu</a>-devChallenge.io</p>
       </footer>
     </div>
-
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./js/scroll.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>
