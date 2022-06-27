@@ -85,6 +85,18 @@ html{
     background-color: #FFFFFF;
     font-size: 14px;
     scroll-behavior: smooth;
+    &.block{
+        overflow-y: hidden;
+        body .container *{
+            display: none;
+        }
+        header{
+            display: block !important;
+            *{
+                display: flex !important;
+            }
+        }
+    }
     & .load-hidden{
         visibility: hidden;
     }
@@ -92,14 +104,10 @@ html{
 ::placeholder{
     color: #BDBDBD;
 }
-body.block{
-    overflow-y: hidden;
-}
 .container{
     width: 100%;
 }
 header{
-    position: relative;
     padding: {
         top: 15px;
         left:widthInVW(10);
@@ -341,6 +349,7 @@ main{
         align-items: center;
         gap: 12px;
         .icon{
+            transform: translateY(2px);
             path{
                 fill: $color-blue;
             }
@@ -541,6 +550,12 @@ footer{
                 }
             }
             nav{
+                .close{
+                    .icon{
+                        width: 30px;
+                        height: auto;
+                    }
+                }
                 ul{
                     gap: 50px;
                     @include setFontProps(24, 36, 700);

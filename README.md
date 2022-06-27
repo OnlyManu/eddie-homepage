@@ -12,7 +12,7 @@
       Demo
     </a>
     <span> | </span>
-    <a href="https://github.com/OnlyManu/">
+    <a href="https://devchallenges.io/solutions/BFjVvXdvbrTXYvRsJeoY">
       Solution
     </a>
     <span> | </span>
@@ -61,9 +61,9 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example -->
 
-- [Scrollreveal.js](https://devchallenges-blogs.web.app/how-to-replicate-design/)
+- [Scrollreveal.js](https://scrollrevealjs.org/)
 
 ## Contact
 
-- GitHub [@your-username](https://{github.com/your-usermame})
+- GitHub [@OnlyManu](https://github.com/OnlyManu/)
 

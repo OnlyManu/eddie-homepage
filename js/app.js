@@ -1,4 +1,4 @@
-const body=document.querySelector('body');
+const html=document.querySelector('html');
 const header=document.querySelector('header');
 const menuIcon=document.querySelector('.menu-burger');
 const nav=document.querySelector('header nav');
@@ -11,7 +11,7 @@ const cards=document.querySelectorAll('.card');
 const showHideMenu=()=>{
     if(getComputedStyle(menuIcon, null).display!='none'){
         nav.classList.toggle('open');
-        body.classList.toggle('block');
+        html.classList.toggle('block');
     }
 }
 const cardHover=(e)=>{
