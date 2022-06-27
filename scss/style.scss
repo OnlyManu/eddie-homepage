@@ -164,6 +164,11 @@ header{
                 }
             }
             li{
+                &:hover{
+                    a{
+                        opacity: 0.6;
+                    }
+                }
                 a{
                     position: relative;
                     color: $color-heading;
