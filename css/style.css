@@ -210,6 +210,9 @@ header .navbar nav {
     font-weight: 700;
   }
 }
+header .navbar nav li:hover a {
+  opacity: 0.5;
+}
 header .navbar nav li a {
   position: relative;
   color: #333333;
