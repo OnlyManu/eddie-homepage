@@ -170,6 +170,9 @@ header .navbar {
   padding-left: 2.6666666667vw;
   padding-right: 2.6666666667vw;
 }
+html.block header .navbar .logo, html.block header .navbar .menu-burger {
+  visibility: hidden !important;
+}
 header .navbar .logo {
   font-family: "Heebo", sans-serif;
   font-size: 1.7142857143rem;
@@ -188,7 +191,7 @@ header .navbar nav {
     z-index: 10000000;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100vw;
     height: 100vh;
     background-color: #FFFFFF;
@@ -199,6 +202,17 @@ header .navbar nav {
   header .navbar nav.open .close {
     display: inherit;
     align-self: flex-end;
+  }
+  header .navbar nav.open ul li {
+    animation: showhide 2s ease-out;
+  }
+  @keyframes showhide {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   header .navbar nav ul {
     display: flex;
