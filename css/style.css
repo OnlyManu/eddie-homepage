@@ -131,9 +131,6 @@ html {
   font-size: 14px;
   scroll-behavior: smooth;
 }
-html.block {
-  overflow-y: hidden;
-}
 html.block body .container * {
   display: none;
 }

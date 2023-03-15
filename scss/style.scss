@@ -86,7 +86,6 @@ html{
     font-size: 14px;
     scroll-behavior: smooth;
     &.block{
-        overflow-y: hidden;
         body .container *{
             display: none;
         }
